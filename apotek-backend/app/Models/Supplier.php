@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Models;
 
@@ -10,14 +10,15 @@ class Supplier extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
+        'nama_supplier',
         'alamat',
-        'telepon',
-        'email',
+        'no_telp',
+        'email'
     ];
 
-    public function stokObat()
+    // Relasi ke Pembelian
+    public function pembelians()
     {
-        return $this->hasMany(StokObat::class);
+        return $this->hasMany(Pembelian::class);
     }
 }
